@@ -8,3 +8,6 @@ ESG Data Trends &amp; Impact Analysis using Power BI
 
 📎 **Dashboard Snapshot (PDF)**  
 🔗 [Click here to view the dashboard image](PowerBI/Dashboard%20Image.pdf)
+## 📐 DAX Documentation
+
+📄 [View Power BI DAX Formula (PDF)](PowerBI/Power%20BI%20Dax%20Formula.pdf)
