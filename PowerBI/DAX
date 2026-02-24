@@ -1,0 +1,62 @@
+ESG Trends & Impact Analysis Dashboard
+Dax formula for important KPI
+
+1. Total ESG Value = 
+CALCULATE(
+    SUM('ESGData (1)'[Value]),
+    'ESGData (1)'[Value] > 0
+)
+
+
+2. Average ESG Value  =
+CALCULATE(
+    AVERAGE('ESGData (1)'[Value]),
+    'ESGData (1)'[Value] > 0
+)
+ 3. Total Countries = 
+DISTINCTCOUNT ( 'ESGData (1)'[Country Name] )
+4. Total Indicators = 
+DISTINCTCOUNT ( 'ESGData (1)'[Indicator Name] )
+5. Latest Year ESG Value = 
+VAR MaxYear =
+    CALCULATE ( MAX ( 'ESGData (1)'[Year] ), ALL ( 'ESGData (1)' ) )
+RETURN
+CALCULATE (
+    [Total ESG Value],
+    'ESGData (1)'[Year] = MaxYear
+)
+
+6. Previous Year ESG Value = 
+VAR MaxYear =
+    CALCULATE(
+        MAX('ESGData (1)'[Year]),
+        ALL('ESGData (1)')
+    )
+
+VAR PrevAvailableYear =
+    CALCULATE(
+        MAX('ESGData (1)'[Year]),
+        FILTER(
+            ALL('ESGData (1)'),
+            'ESGData (1)'[Year] < MaxYear
+        )
+    )
+
+RETURN
+CALCULATE(
+    [Total ESG Value],
+    'ESGData (1)'[Year] = PrevAvailableYear
+)
+
+
+7. YoY Growth % = 
+VAR CurrentValue = [Latest Year ESG Value]
+VAR PreviousValue = [Previous Year ESG Value]
+RETURN
+IF(
+    ISBLANK(PreviousValue),
+    BLANK(),
+    DIVIDE(CurrentValue - PreviousValue, PreviousValue)
+)
+
+
