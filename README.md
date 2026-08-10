@@ -6,8 +6,9 @@ ESG Data Trends &amp; Impact Analysis using Power BI
 🔗 [View Full Project Report (PDF)](Report/Project%20Report-ESG%20Trends%20%26%20Impact%20Analysis%20Dashboard.pdf)
 
 
-📎 **Dashboard Snapshot (PDF)**  
-🔗 [Click here to view the dashboard image](PowerBI/Dashboard%20Image.pdf)
+📊 **Power BI File**
+<a href="PowerBI/powerbi ESG (1).pbix">Download the .pbix file</a>
+
 ## 📐 DAX Documentation
 
 📄 [View Power BI DAX Formula (PDF)](PowerBI/Power%20BI%20Dax%20Formula.pdf)
